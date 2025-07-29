@@ -2,189 +2,133 @@ use std::collections::BTreeMap;
 
 use anyhow::Result;
 
-use log::debug;
+use log::{debug, error};
 
 use memflow::prelude::v1::*;
 
+use pelite::pattern;
+use pelite::pattern::{Atom, save_len};
 use pelite::pe64::{Pe, PeView, Rva};
+
+use phf::{Map, phf_map};
 
 pub type OffsetMap = BTreeMap<String, BTreeMap<String, Rva>>;
 
-mod client {
-    use super::*;
+macro_rules! pattern_map {
+    ($($module:ident => {
+        $($name:expr => $pattern:expr $(=> $callback:expr)?),+ $(,)?
+    }),+ $(,)?) => {
+        $(
+            mod $module {
+                use super::*;
 
-    pub fn offsets(view: PeView<'_>) -> BTreeMap<String, Rva> {
-        let mut map = BTreeMap::new();
+                pub(super) const PATTERNS: Map<
+                    &'static str,
+                    (
+                        &'static [Atom],
+                        Option<fn(&PeView, &mut BTreeMap<String, Rva>, Rva)>,
+                    ),
+                > = phf_map! {
+                    $($name => ($pattern, $($callback)?)),+
+                };
 
-        // Add static offsets with updated values
-        map.insert("dwCSGOInput".to_string(), 0x1D2BE10);
-        map.insert("dwEntityList".to_string(), 0x1CBE4A0);
-        map.insert("dwGameRules".to_string(), 0x1D1D2E0);
-        map.insert("dwGlobalVars".to_string(), 0x1AE92E8);
-        map.insert("dwGlowManager".to_string(), 0x1D1D308);
-        map.insert("dwPlantedC4".to_string(), 0x1D26E00);
-        map.insert("dwViewMatrix".to_string(), 0x1D21800);
-        map.insert("dwViewRender".to_string(), 0x1D22440);
+                pub fn offsets(view: PeView<'_>) -> BTreeMap<String, Rva> {
+                    let mut map = BTreeMap::new();
 
-        // Previously provided static offsets
-        map.insert("dwLocalPlayerPawn".to_string(), 0x1AF4A20);
-        map.insert("dwSensitivity".to_string(), 0x1A6A9D8);
-        map.insert("dwSensitivity_sensitivity".to_string(), 0x40);
-        map.insert("dwViewAngles".to_string(), 0x1A78650);
+                    for (&name, (pat, callback)) in &PATTERNS {
+                        let mut save = vec![0; save_len(pat)];
 
-        // Convert previously outdated patterns to static offsets
-        map.insert("dwGameEntitySystem".to_string(), 0x1E49280);
-        map.insert("dwGameEntitySystem_highestEntityIndex".to_string(), 0x1520);
-        map.insert("dwLocalPlayerController".to_string(), 0x1C092D8);
-        map.insert("dwPrediction".to_string(), 0x1D1F420);
-        map.insert("dwWeaponC4".to_string(), 0x1E01A70);
+                        if !view.scanner().finds_code(pat, &mut save) {
+                            error!("outdated pattern: {}", name);
 
-        // Add field offsets
-        map.insert("m_hPlayerPawn".to_string(), 0x6B4);
-        map.insert("m_iHealth".to_string(), 0x34C);
-        map.insert("m_iTeamNum".to_string(), 0x3EB);
-        map.insert("m_Glow".to_string(), 0xC00);
-        map.insert("m_iGlowType".to_string(), 0x30);
-        map.insert("m_glowColorOverride".to_string(), 0x40);
-        map.insert("m_bGlowing".to_string(), 0x51);
-        map.insert("m_vOldOrigin".to_string(), 0x15B0);
-        map.insert("m_pGameSceneNode".to_string(), 0x330);
-        map.insert("m_modelState".to_string(), 0x170);
-        map.insert("m_iIDEntIndex".to_string(), 0x1458);
-        map.insert("m_designerName".to_string(), 0x20);
-        map.insert("m_pEntity".to_string(), 0x10);
-        map.insert("m_flFlashDuration".to_string(), 0x140C);
-        map.insert("m_flFlashBangTime".to_string(), 0x13F8);
-        map.insert("m_flFlashOverlayAlpha".to_string(), 0x1400);
-        map.insert("m_sSanitizedPlayerName".to_string(), 0x778);
-        map.insert("m_hPawn".to_string(), 0x62C);
-        map.insert("m_fFlags".to_string(), 0x3F8);
-        map.insert("m_iShotsFired".to_string(), 0x23FC);
-        map.insert("m_aimPunchCache".to_string(), 0x15A8);
-        map.insert("m_pClippingWeapon".to_string(), 0x1620);
-        map.insert("m_AttributeManager".to_string(), 0x1148);
-        map.insert("m_Item".to_string(), 0x50);
-        map.insert("m_iItemDefinitionIndex".to_string(), 0x1BA);
-        map.insert("m_bIsScoped".to_string(), 0x23E8);
-        map.insert("jump".to_string(), 0x1850DF0);
+                            continue;
+                        }
 
-        for (name, value) in &map {
-            debug!(
-                "found offset: {} at {:#X} (client.dll + {:#X})",
-                name,
-                *value as u64 + view.optional_header().ImageBase,
-                value
-            );
-        }
+                        let rva = save[1];
 
-        map
-    }
+                        map.insert(name.to_string(), rva);
+
+                        if let Some(callback) = callback {
+                            callback(&view, &mut map, rva);
+                        }
+                    }
+
+                    for (name, value) in &map {
+                        debug!(
+                            "found offset: {} at {:#X} ({}.dll + {:#X})",
+                            name,
+                            *value as u64 + view.optional_header().ImageBase,
+                            stringify!($module),
+                            value
+                        );
+                    }
+
+                    map
+                }
+            }
+        )+
+    };
 }
 
-mod engine2 {
-    use super::*;
+pattern_map! {
+    client => {
+        "dwCSGOInput" => pattern!("488905${'} 0f57c0 0f1105") => Some(|view, map, rva| {
+            let mut save = [0; 2];
 
-    pub fn offsets(view: PeView<'_>) -> BTreeMap<String, Rva> {
-        let mut map = BTreeMap::new();
+            if view.scanner().finds_code(pattern!("f2420f108428u4"), &mut save) {
+                map.insert("dwViewAngles".to_string(), rva + save[1]);
+            }
+        }),
+        "dwEntityList" => pattern!("488935${'} 4885f6") => None,
+        "dwGameEntitySystem" => pattern!("488b3d${'} 48893d") => None,
+        "dwGameEntitySystem_highestEntityIndex" => pattern!("ff81u4 4885d2") => None,
+        "dwGameRules" => pattern!("48891d${'} ff15${} 84c0") => None,
+        "dwGlobalVars" => pattern!("488915${'} 488942") => None,
+        "dwGlowManager" => pattern!("488b05${'} c3 cccccccccccccccc 8b41") => None,
+        "dwLocalPlayerController" => pattern!("488b05${'} 4189be") => None,
+        "dwPlantedC4" => pattern!("488b15${'} 41ffc0") => None,
+        "dwPrediction" => pattern!("488d05${'} c3 cccccccccccccccc 405356 4154") => Some(|view, map, rva| {
+            let mut save = [0; 2];
 
-        // Add all static offsets for engine2
-        map.insert("dwBuildNumber".to_string(), 0x5F7014);
-        map.insert("dwNetworkGameClient".to_string(), 0x5F6FB8);
-        map.insert("dwNetworkGameClient_clientTickCount".to_string(), 0x174);
-        map.insert("dwNetworkGameClient_deltaTick".to_string(), 0x178);
-        map.insert("dwNetworkGameClient_isBackgroundMap".to_string(), 0x278);
-        map.insert("dwNetworkGameClient_localPlayer".to_string(), 0x2A8);
-        map.insert("dwNetworkGameClient_maxClients".to_string(), 0x270);
-        map.insert("dwNetworkGameClient_serverTickCount".to_string(), 0x170);
-        map.insert("dwNetworkGameClient_signOnState".to_string(), 0x260);
-        map.insert("dwWindowHeight".to_string(), 0x614844);
-        map.insert("dwWindowWidth".to_string(), 0x614840);
-
-        for (name, value) in &map {
-            debug!(
-                "found offset: {} at {:#X} (engine2.dll + {:#X})",
-                name,
-                *value as u64 + view.optional_header().ImageBase,
-                value
-            );
-        }
-
-        map
-    }
-}
-
-mod input_system {
-    use super::*;
-
-    pub fn offsets(view: PeView<'_>) -> BTreeMap<String, Rva> {
-        let mut map = BTreeMap::new();
-
-        // Add static offset for dwInputSystem
-        map.insert("dwInputSystem".to_string(), 0x3A5B0);
-
-        for (name, value) in &map {
-            debug!(
-                "found offset: {} at {:#X} (inputsystem.dll + {:#X})",
-                name,
-                *value as u64 + view.optional_header().ImageBase,
-                value
-            );
-        }
-
-        map
-    }
-}
-
-mod matchmaking {
-    use super::*;
-
-    pub fn offsets(view: PeView<'_>) -> BTreeMap<String, Rva> {
-        let mut map = BTreeMap::new();
-
-        // Add static offsets for matchmaking
-        map.insert("dwGameTypes".to_string(), 0x1A41C0);
-        map.insert("dwGameTypes_mapName".to_string(), 0x120);
-
-        for (name, value) in &map {
-            debug!(
-                "found offset: {} at {:#X} (matchmaking.dll + {:#X})",
-                name,
-                *value as u64 + view.optional_header().ImageBase,
-                value
-            );
-        }
-
-        map
-    }
-}
-
-mod soundsystem {
-    use super::*;
-
-    pub fn offsets(view: PeView<'_>) -> BTreeMap<String, Rva> {
-        let mut map = BTreeMap::new();
-
-        // Add static offsets for soundsystem
-        map.insert("dwSoundSystem".to_string(), 0x39A5E0);
-        map.insert("dwSoundSystem_engineViewData".to_string(), 0x7C);
-
-        for (name, value) in &map {
-            debug!(
-                "found offset: {} at {:#X} (soundsystem.dll + {:#X})",
-                name,
-                *value as u64 + view.optional_header().ImageBase,
-                value
-            );
-        }
-
-        map
-    }
+            if view.scanner().finds_code(pattern!("4c39b6u4 74? 4488be"), &mut save) {
+                map.insert("dwLocalPlayerPawn".to_string(), rva + save[1]);
+            }
+        }),
+        "dwSensitivity" => pattern!("488d0d${[8]'} 660f6ecd") => None,
+        "dwSensitivity_sensitivity" => pattern!("488d7eu1 480fbae0? 72? 85d2 490f4fff") => None,
+        "dwViewMatrix" => pattern!("488d0d${'} 48c1e006") => None,
+        "dwViewRender" => pattern!("488905${'} 488bc8 4885c0") => None,
+        "dwWeaponC4" => pattern!("488905${'} f7c1[4] 74? 81e1[4] 890d${} 8b05${} 891d${} eb? 488b15${} 488b5c24? ffc0 8905${} 488bc6 488934ea 80be") => None,
+    },
+    engine2 => {
+        "dwBuildNumber" => pattern!("8905${'} 488d0d${} ff15${} 488b0d") => None,
+        "dwNetworkGameClient" => pattern!("48893d${'} 488d15") => None,
+        "dwNetworkGameClient_clientTickCount" => pattern!("8b81u4 c3 cccccccccccccccccc 8b81${} c3 cccccccccccccccccc 83b9") => None,
+        "dwNetworkGameClient_deltaTick" => pattern!("4c8db7u4 4c897c24") => None,
+        "dwNetworkGameClient_isBackgroundMap" => pattern!("0fb681u4 c3 cccccccccccccccc 0fb681${} c3 cccccccccccccccc 4053") => None,
+        "dwNetworkGameClient_localPlayer" => pattern!("428b94d3u4 5b 49ffe3 32c0 5b c3 cccccccccccccccc 4053") => None,
+        "dwNetworkGameClient_maxClients" => pattern!("8b81u4 c3cccccccccccccccccc 8b81${} ffc0") => None,
+        "dwNetworkGameClient_serverTickCount" => pattern!("8b81u4 c3 cccccccccccccccccc 83b9") => None,
+        "dwNetworkGameClient_signOnState" => pattern!("448b81u4 488d0d") => None,
+        "dwWindowHeight" => pattern!("8b05${'} 8903") => None,
+        "dwWindowWidth" => pattern!("8b05${'} 8907") => None,
+    },
+    input_system => {
+        "dwInputSystem" => pattern!("488905${'} 33c0") => None,
+    },
+    matchmaking => {
+        "dwGameTypes" => pattern!("488d0d${'} ff90") => None,
+    },
+    soundsystem => {
+        "dwSoundSystem" => pattern!("488d05${'} c3 cccccccccccccccc 488915") => None,
+        "dwSoundSystem_engineViewData" => pattern!("0f1147u1 0f104b? 0f118f") => None,
+    },
 }
 
 pub fn offsets<P: Process + MemoryView>(process: &mut P) -> Result<OffsetMap> {
     let mut map = BTreeMap::new();
 
-    let modules: [(&str, fn(PeView) -> BTreeMap<String, Rva>); 5] = [
+    let modules: [(&str, fn(PeView) -> BTreeMap<String, u32>); 5] = [
         ("client.dll", client::offsets),
         ("engine2.dll", engine2::offsets),
         ("inputsystem.dll", input_system::offsets),
