@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #pragma once
 
@@ -361,7 +361,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_nStreamingSize = 0x30; // uint32
                 constexpr std::ptrdiff_t m_nSeekTable = 0x38; // CUtlVector<int32>
                 constexpr std::ptrdiff_t m_nLoopEnd = 0x50; // int32
-                constexpr std::ptrdiff_t m_encodedHeader = 0x58; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_encodedHeader = 0x58; // 
             }
             // Parent: None
             // Field count: 1
@@ -617,7 +617,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flLowCutoffFreq = 0x18; // float32
                 constexpr std::ptrdiff_t m_flHighCutoffFreq = 0x1C; // float32
                 constexpr std::ptrdiff_t m_bPeakMode = 0x20; // bool
-                constexpr std::ptrdiff_t m_bandDesc = 0x24; // VMixDynamicsBand_t[3]
+                constexpr std::ptrdiff_t m_bandDesc = 0x24; // 
             }
             // Parent: None
             // Field count: 6

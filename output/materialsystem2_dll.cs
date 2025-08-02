@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: materialsystem2.dll
@@ -74,7 +74,7 @@ namespace CS2Dumper.Schemas {
         // MGetKV3ClassDefaults
         public static class PostProcessingResource_t {
             public const nint m_bHasTonemapParams = 0x0; // bool
-            public const nint m_toneMapParams = 0x4; // PostProcessingTonemapParameters_t
+            public const nint m_toneMapParams = 0x4; // 
             public const nint m_bHasBloomParams = 0x40; // bool
             public const nint m_bloomParams = 0x44; // PostProcessingBloomParameters_t
             public const nint m_bHasVignetteParams = 0xCC; // bool
@@ -82,7 +82,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_bHasLocalContrastParams = 0xF4; // bool
             public const nint m_localConstrastParams = 0xF8; // PostProcessingLocalContrastParameters_t
             public const nint m_nColorCorrectionVolumeDim = 0x10C; // int32
-            public const nint m_colorCorrectionVolumeData = 0x110; // CUtlBinaryBlock
+            public const nint m_colorCorrectionVolumeData = 0x110; // 
             public const nint m_bHasColorCorrection = 0x120; // bool
             public const nint m_bHasFogScatteringParams = 0x121; // bool
             public const nint m_fogScatteringParams = 0x124; // PostProcessingFogScatteringParameters_t
@@ -160,7 +160,7 @@ namespace CS2Dumper.Schemas {
         // Metadata:
         // MGetKV3ClassDefaults
         public static class MaterialParamBuffer_t {
-            public const nint m_value = 0x8; // CUtlBinaryBlock
+            public const nint m_value = 0x8; // 
         }
         // Parent: None
         // Field count: 14

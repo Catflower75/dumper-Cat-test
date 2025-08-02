@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -1718,7 +1718,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmTransitionEventConditionNode__CDefinition {
                 pub const m_requireRuleID: usize = 0x10; // CGlobalSymbol
-                pub const m_eventConditionRules: usize = 0x18; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x18; // 
                 pub const m_nSourceStateNodeIdx: usize = 0x1C; // int16
                 pub const m_ruleCondition: usize = 0x1E; // NmTransitionRuleCondition_t
             }
@@ -1974,7 +1974,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmIDEventNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
                 pub const m_defaultValue: usize = 0x18; // CGlobalSymbol
             }
             // Parent: None
@@ -2170,9 +2170,9 @@ pub mod cs2_dumper {
                 pub const m_syncEventOffsetOverrideNodeIdx: usize = 0x14; // int16
                 pub const m_startBoneMaskNodeIdx: usize = 0x16; // int16
                 pub const m_flDuration: usize = 0x18; // float32
-                pub const m_boneMaskBlendInTimePercentage: usize = 0x1C; // NmPercent_t
+                pub const m_boneMaskBlendInTimePercentage: usize = 0x1C; // 
                 pub const m_syncEventOffset: usize = 0x20; // float32
-                pub const m_transitionOptions: usize = 0x24; // CNmBitFlags
+                pub const m_transitionOptions: usize = 0x24; // 
                 pub const m_targetSyncIDNodeIdx: usize = 0x28; // int16
                 pub const m_blendWeightEasing: usize = 0x2A; // NmEasingOperation_t
                 pub const m_rootMotionBlend: usize = 0x2B; // NmRootMotionBlendMode_t
@@ -2431,7 +2431,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmIDEventConditionNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
                 pub const m_eventIDs: usize = 0x18; // CUtlVectorFixedGrowable<CGlobalSymbol,5>
             }
             // Parent: None
@@ -2459,7 +2459,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod CFootPinningUpdateNode {
-                pub const m_poseOpFixedData: usize = 0x78; // FootPinningPoseOpFixedData_t
+                pub const m_poseOpFixedData: usize = 0x78; // 
                 pub const m_eTimingSource: usize = 0xA8; // FootPinningTimingSource
                 pub const m_params: usize = 0xB0; // CUtlVector<CAnimParamHandle>
                 pub const m_bResetChild: usize = 0xC8; // bool
@@ -2485,7 +2485,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod PulseGraphExecutionHistoryCursorDesc_t {
-                pub const vecAncestorCursorIDs: usize = 0x0; // CUtlVector<PulseCursorID_t>
+                pub const vecAncestorCursorIDs: usize = 0x0; // 
                 pub const nSpawnNodeID: usize = 0x18; // PulseDocNodeID_t
                 pub const nRetiredAtNodeID: usize = 0x1C; // PulseDocNodeID_t
                 pub const flLastReferenced: usize = 0x20; // float32
@@ -2785,7 +2785,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmIDEventPercentageThroughNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
                 pub const m_eventID: usize = 0x18; // CGlobalSymbol
             }
             // Parent: None
@@ -2971,7 +2971,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             // MPropertyFriendlyName
             pub mod CFootFallAnimTag {
-                pub const m_foot: usize = 0x58; // FootFallTagFoot_t
+                pub const m_foot: usize = 0x58; // 
             }
             // Parent: None
             // Field count: 17
@@ -3249,7 +3249,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod CNmConstTargetNode__CDefinition {
-                pub const m_value: usize = 0x10; // CNmTarget
+                pub const m_value: usize = 0x10; // 
             }
             // Parent: None
             // Field count: 6
@@ -3681,7 +3681,7 @@ pub mod cs2_dumper {
                 pub const m_paramX: usize = 0xDC; // CAnimParamHandle
                 pub const m_blendSourceY: usize = 0xE0; // AnimValueSource
                 pub const m_paramY: usize = 0xE4; // CAnimParamHandle
-                pub const m_eBlendMode: usize = 0xE8; // Blend2DMode
+                pub const m_eBlendMode: usize = 0xE8; // 
                 pub const m_playbackSpeed: usize = 0xEC; // float32
                 pub const m_bLoop: usize = 0xF0; // bool
                 pub const m_bLockBlendOnReset: usize = 0xF1; // bool
@@ -4229,7 +4229,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod CNmSyncTrack__EventMarker_t {
-                pub const m_startTime: usize = 0x0; // NmPercent_t
+                pub const m_startTime: usize = 0x0; // 
                 pub const m_ID: usize = 0x8; // CGlobalSymbol
             }
             // Parent: None
@@ -4347,7 +4347,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod FootLockPoseOpFixedSettings {
-                pub const m_footInfo: usize = 0x0; // CUtlVector<FootFixedData_t>
+                pub const m_footInfo: usize = 0x0; // 
                 pub const m_hipDampingSettings: usize = 0x18; // CAnimInputDamping
                 pub const m_nHipBoneIndex: usize = 0x30; // int32
                 pub const m_ikSolverType: usize = 0x34; // IKSolverType
@@ -4662,7 +4662,7 @@ pub mod cs2_dumper {
                 pub const m_boneFlexDrivers: usize = 0x260; // CUtlVector<ModelBoneFlexDriver_t>
                 pub const m_pModelConfigList: usize = 0x278; // CModelConfigList*
                 pub const m_BodyGroupsHiddenInTools: usize = 0x280; // CUtlVector<CUtlString>
-                pub const m_refAnimIncludeModels: usize = 0x298; // CUtlVector<CStrongHandle<InfoForResourceTypeCModel>>
+                pub const m_refAnimIncludeModels: usize = 0x298; // 
                 pub const m_AnimatedMaterialAttributes: usize = 0x2B0; // CUtlVector<PermModelDataAnimatedMaterialAttribute_t>
             }
             // Parent: None
@@ -4833,7 +4833,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod CHitReactUpdateNode {
-                pub const m_opFixedSettings: usize = 0x70; // HitReactFixedSettings_t
+                pub const m_opFixedSettings: usize = 0x70; // 
                 pub const m_triggerParam: usize = 0xBC; // CAnimParamHandle
                 pub const m_hitBoneParam: usize = 0xBE; // CAnimParamHandle
                 pub const m_hitOffsetParam: usize = 0xC0; // CAnimParamHandle
@@ -4864,9 +4864,9 @@ pub mod cs2_dumper {
                 pub const m_name: usize = 0x0; // CBufferString
                 pub const m_parent: usize = 0x10; // int32
                 pub const m_pos: usize = 0x14; // Vector
-                pub const m_quat: usize = 0x20; // QuaternionStorage
+                pub const m_quat: usize = 0x20; // 
                 pub const m_scale: usize = 0x30; // float32
-                pub const m_qAlignment: usize = 0x34; // QuaternionStorage
+                pub const m_qAlignment: usize = 0x34; // 
                 pub const m_flags: usize = 0x44; // int32
             }
             // Parent: None
@@ -4966,7 +4966,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CAnimReplayFrame {
                 pub const m_inputDataBlocks: usize = 0x10; // CUtlVector<CUtlBinaryBlock>
-                pub const m_instanceData: usize = 0x28; // CUtlBinaryBlock
+                pub const m_instanceData: usize = 0x28; // 
                 pub const m_startingLocalToWorldTransform: usize = 0x40; // CTransform
                 pub const m_localToWorldTransform: usize = 0x60; // CTransform
                 pub const m_timeStamp: usize = 0x80; // float32
@@ -5042,7 +5042,7 @@ pub mod cs2_dumper {
             pub mod CNmFootstepEventPercentageThroughNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
                 pub const m_phaseCondition: usize = 0x12; // NmFootPhaseCondition_t
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
             }
             // Parent: None
             // Field count: 7
@@ -5074,7 +5074,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmGraphEventConditionNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
                 pub const m_conditions: usize = 0x18; // CUtlVectorFixedGrowable<CNmGraphEventConditionNode::Condition_t,5>
             }
             // Parent: None
@@ -5318,7 +5318,7 @@ pub mod cs2_dumper {
                 pub const m_nUniqueFrameIndex: usize = 0x0; // int32
                 pub const m_nLocalElementMasks: usize = 0x4; // uint32
                 pub const m_nLocalChannel: usize = 0x8; // int32
-                pub const m_container: usize = 0x10; // CUtlBinaryBlock
+                pub const m_container: usize = 0x10; // 
             }
             // Parent: None
             // Field count: 7
@@ -5821,7 +5821,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod NmSyncTrackTime_t {
                 pub const m_nEventIdx: usize = 0x0; // int32
-                pub const m_percentageThrough: usize = 0x4; // NmPercent_t
+                pub const m_percentageThrough: usize = 0x4; // 
             }
             // Parent: None
             // Field count: 12
@@ -5832,7 +5832,7 @@ pub mod cs2_dumper {
                 pub const m_skeleton: usize = 0x0; // CStrongHandle<InfoForResourceTypeCNmSkeleton>
                 pub const m_nNumFrames: usize = 0x8; // uint32
                 pub const m_flDuration: usize = 0xC; // float32
-                pub const m_compressedPoseData: usize = 0x10; // CUtlBinaryBlock
+                pub const m_compressedPoseData: usize = 0x10; // 
                 pub const m_trackCompressionSettings: usize = 0x20; // CUtlVector<NmCompressionSettings_t>
                 pub const m_compressedPoseOffsets: usize = 0x38; // CUtlVector<uint32>
                 pub const m_secondaryAnimations: usize = 0x78; // CUtlVectorFixedGrowable<CNmClip*,1>
@@ -6152,7 +6152,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod FootPinningPoseOpFixedData_t {
-                pub const m_footInfo: usize = 0x0; // CUtlVector<FootFixedData_t>
+                pub const m_footInfo: usize = 0x0; // 
                 pub const m_flBlendTime: usize = 0x18; // float32
                 pub const m_flLockBreakDistance: usize = 0x1C; // float32
                 pub const m_flMaxLegTwist: usize = 0x20; // float32
@@ -6236,7 +6236,7 @@ pub mod cs2_dumper {
                 pub const m_outputBones: usize = 0x40; // CUtlVector<std::pair<CUtlString,uint32>>
             }
             // Parent: None
-            // Field count: 7
+            // Field count: 9
             //
             // Metadata:
             // MGetKV3ClassDefaults
@@ -6248,6 +6248,8 @@ pub mod cs2_dumper {
                 pub const m_attachmentName: usize = 0x38; // CUtlString
                 pub const m_tags: usize = 0x40; // CUtlString
                 pub const m_bIsServerOnly: usize = 0x48; // bool
+                pub const m_bContinuePlayingSoundAtDurationEnd: usize = 0x49; // bool
+                pub const m_flDurationInterruptionThreshold: usize = 0x4C; // float32
             }
             // Parent: None
             // Field count: 14
@@ -6549,7 +6551,7 @@ pub mod cs2_dumper {
                 pub const m_angularVelocityLimitNodeIdx: usize = 0x1E; // int16
                 pub const m_maxLinearVelocity: usize = 0x20; // float32
                 pub const m_maxAngularVelocityRadians: usize = 0x24; // float32
-                pub const m_overrideFlags: usize = 0x28; // CNmBitFlags
+                pub const m_overrideFlags: usize = 0x28; // 
             }
             // Parent: None
             // Field count: 9
@@ -6673,7 +6675,7 @@ pub mod cs2_dumper {
                 pub const m_swing2LimitSpring: usize = 0x8C; // float32
                 pub const m_swing2LimitDamping: usize = 0x90; // float32
                 pub const m_goalPosition: usize = 0x94; // Vector
-                pub const m_goalOrientation: usize = 0xA0; // QuaternionStorage
+                pub const m_goalOrientation: usize = 0xA0; // 
                 pub const m_goalAngularVelocity: usize = 0xB0; // Vector
                 pub const m_driveSpringX: usize = 0xBC; // float32
                 pub const m_driveSpringY: usize = 0xC0; // float32
@@ -6709,7 +6711,7 @@ pub mod cs2_dumper {
                 pub const m_nEffectorBoneIdx: usize = 0x50; // int32
                 pub const m_targetTransform: usize = 0x60; // CTransform
                 pub const m_nNumBonesInChain: usize = 0x80; // int32
-                pub const m_effectorTarget: usize = 0x90; // CNmTarget
+                pub const m_effectorTarget: usize = 0x90; // 
                 pub const m_blendMode: usize = 0xC0; // NmIKBlendMode_t
                 pub const m_flBlendWeight: usize = 0xC4; // float32
                 pub const m_bIsTargetInWorldSpace: usize = 0xC8; // bool
@@ -6835,7 +6837,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmFootstepEventIDNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
             }
             // Parent: None
             // Field count: 2
@@ -7234,7 +7236,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod CFootStepTriggerUpdateNode {
-                pub const m_triggers: usize = 0x70; // CUtlVector<FootStepTrigger>
+                pub const m_triggers: usize = 0x70; // 
                 pub const m_flTolerance: usize = 0x8C; // float32
             }
             // Parent: None
@@ -7433,7 +7435,7 @@ pub mod cs2_dumper {
             // MPropertyFriendlyName
             pub mod CMaterialAttributeAnimTag {
                 pub const m_AttributeName: usize = 0x58; // CUtlString
-                pub const m_AttributeType: usize = 0x60; // MatterialAttributeTagType_t
+                pub const m_AttributeType: usize = 0x60; // 
                 pub const m_flValue: usize = 0x64; // float32
                 pub const m_Color: usize = 0x68; // Color
             }
@@ -7445,7 +7447,7 @@ pub mod cs2_dumper {
             pub mod CNmFootEventConditionNode__CDefinition {
                 pub const m_nSourceStateNodeIdx: usize = 0x10; // int16
                 pub const m_phaseCondition: usize = 0x12; // NmFootPhaseCondition_t
-                pub const m_eventConditionRules: usize = 0x14; // CNmBitFlags
+                pub const m_eventConditionRules: usize = 0x14; // 
             }
             // Parent: None
             // Field count: 1
@@ -7677,7 +7679,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CMotionGraphGroup {
                 pub const m_searchDB: usize = 0x0; // CMotionSearchDB
-                pub const m_motionGraphs: usize = 0xB8; // CUtlVector<CSmartPtr<CMotionGraph>>
+                pub const m_motionGraphs: usize = 0xB8; // 
                 pub const m_motionGraphConfigs: usize = 0xD0; // CUtlVector<CMotionGraphConfig>
                 pub const m_sampleToConfig: usize = 0xE8; // CUtlVector<int32>
                 pub const m_hIsActiveScript: usize = 0x100; // AnimScriptHandle
@@ -7697,8 +7699,8 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod CNmSyncTrack__Event_t {
                 pub const m_ID: usize = 0x0; // CGlobalSymbol
-                pub const m_startTime: usize = 0x8; // NmPercent_t
-                pub const m_duration: usize = 0xC; // NmPercent_t
+                pub const m_startTime: usize = 0x8; // 
+                pub const m_duration: usize = 0xC; // 
             }
             // Parent: None
             // Field count: 0

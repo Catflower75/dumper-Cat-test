@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -385,7 +385,7 @@ pub mod cs2_dumper {
             pub mod RnBodyDesc_t {
                 pub const m_sDebugName: usize = 0x0; // CUtlString
                 pub const m_vPosition: usize = 0x8; // Vector
-                pub const m_qOrientation: usize = 0x14; // QuaternionStorage
+                pub const m_qOrientation: usize = 0x14; // 
                 pub const m_vLinearVelocity: usize = 0x24; // Vector
                 pub const m_vAngularVelocity: usize = 0x30; // Vector
                 pub const m_vLocalMassCenter: usize = 0x3C; // Vector
@@ -918,7 +918,7 @@ pub mod cs2_dumper {
                 pub const nNodeX1: usize = 0xA; // uint16
                 pub const nNodeY0: usize = 0xC; // uint16
                 pub const nNodeY1: usize = 0xE; // uint16
-                pub const qAdjust: usize = 0x10; // QuaternionStorage
+                pub const qAdjust: usize = 0x10; // 
             }
             // Parent: None
             // Field count: 6

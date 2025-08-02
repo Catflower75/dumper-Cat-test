@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #pragma once
 
@@ -79,7 +79,7 @@ namespace cs2_dumper {
             // MGetKV3ClassDefaults
             namespace PostProcessingResource_t {
                 constexpr std::ptrdiff_t m_bHasTonemapParams = 0x0; // bool
-                constexpr std::ptrdiff_t m_toneMapParams = 0x4; // PostProcessingTonemapParameters_t
+                constexpr std::ptrdiff_t m_toneMapParams = 0x4; // 
                 constexpr std::ptrdiff_t m_bHasBloomParams = 0x40; // bool
                 constexpr std::ptrdiff_t m_bloomParams = 0x44; // PostProcessingBloomParameters_t
                 constexpr std::ptrdiff_t m_bHasVignetteParams = 0xCC; // bool
@@ -87,7 +87,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_bHasLocalContrastParams = 0xF4; // bool
                 constexpr std::ptrdiff_t m_localConstrastParams = 0xF8; // PostProcessingLocalContrastParameters_t
                 constexpr std::ptrdiff_t m_nColorCorrectionVolumeDim = 0x10C; // int32
-                constexpr std::ptrdiff_t m_colorCorrectionVolumeData = 0x110; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_colorCorrectionVolumeData = 0x110; // 
                 constexpr std::ptrdiff_t m_bHasColorCorrection = 0x120; // bool
                 constexpr std::ptrdiff_t m_bHasFogScatteringParams = 0x121; // bool
                 constexpr std::ptrdiff_t m_fogScatteringParams = 0x124; // PostProcessingFogScatteringParameters_t
@@ -165,7 +165,7 @@ namespace cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             namespace MaterialParamBuffer_t {
-                constexpr std::ptrdiff_t m_value = 0x8; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_value = 0x8; // 
             }
             // Parent: None
             // Field count: 14

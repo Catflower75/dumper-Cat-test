@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #pragma once
 
@@ -384,7 +384,7 @@ namespace cs2_dumper {
             namespace RnBodyDesc_t {
                 constexpr std::ptrdiff_t m_sDebugName = 0x0; // CUtlString
                 constexpr std::ptrdiff_t m_vPosition = 0x8; // Vector
-                constexpr std::ptrdiff_t m_qOrientation = 0x14; // QuaternionStorage
+                constexpr std::ptrdiff_t m_qOrientation = 0x14; // 
                 constexpr std::ptrdiff_t m_vLinearVelocity = 0x24; // Vector
                 constexpr std::ptrdiff_t m_vAngularVelocity = 0x30; // Vector
                 constexpr std::ptrdiff_t m_vLocalMassCenter = 0x3C; // Vector
@@ -917,7 +917,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t nNodeX1 = 0xA; // uint16
                 constexpr std::ptrdiff_t nNodeY0 = 0xC; // uint16
                 constexpr std::ptrdiff_t nNodeY1 = 0xE; // uint16
-                constexpr std::ptrdiff_t qAdjust = 0x10; // QuaternionStorage
+                constexpr std::ptrdiff_t qAdjust = 0x10; // 
             }
             // Parent: None
             // Field count: 6

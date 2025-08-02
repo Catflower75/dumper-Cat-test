@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: vphysics2.dll
@@ -379,7 +379,7 @@ namespace CS2Dumper.Schemas {
         public static class RnBodyDesc_t {
             public const nint m_sDebugName = 0x0; // CUtlString
             public const nint m_vPosition = 0x8; // Vector
-            public const nint m_qOrientation = 0x14; // QuaternionStorage
+            public const nint m_qOrientation = 0x14; // 
             public const nint m_vLinearVelocity = 0x24; // Vector
             public const nint m_vAngularVelocity = 0x30; // Vector
             public const nint m_vLocalMassCenter = 0x3C; // Vector
@@ -912,7 +912,7 @@ namespace CS2Dumper.Schemas {
             public const nint nNodeX1 = 0xA; // uint16
             public const nint nNodeY0 = 0xC; // uint16
             public const nint nNodeY1 = 0xE; // uint16
-            public const nint qAdjust = 0x10; // QuaternionStorage
+            public const nint qAdjust = 0x10; // 
         }
         // Parent: None
         // Field count: 6

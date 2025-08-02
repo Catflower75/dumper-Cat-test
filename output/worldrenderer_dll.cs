@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: worldrenderer.dll
@@ -39,7 +39,7 @@ namespace CS2Dumper.Schemas {
         // Metadata:
         // MGetKV3ClassDefaults
         public static class AggregateVertexAlbedoStreamOnDiskData_t {
-            public const nint m_BufferData = 0x0; // CUtlBinaryBlock
+            public const nint m_BufferData = 0x0; // 
         }
         // Parent: None
         // Field count: 14
@@ -135,7 +135,7 @@ namespace CS2Dumper.Schemas {
         // MGetKV3ClassDefaults
         public static class AggregateInstanceStreamOnDiskData_t {
             public const nint m_DecodedSize = 0x0; // uint32
-            public const nint m_BufferData = 0x8; // CUtlBinaryBlock
+            public const nint m_BufferData = 0x8; // 
         }
         // Parent: None
         // Field count: 11
@@ -344,7 +344,7 @@ namespace CS2Dumper.Schemas {
         // MGetKV3ClassDefaults
         public static class EntityKeyValueData_t {
             public const nint m_connections = 0x8; // CUtlVector<EntityIOConnectionData_t>
-            public const nint m_keyValuesData = 0x20; // CUtlBinaryBlock
+            public const nint m_keyValuesData = 0x20; // 
         }
         // Parent: None
         // Field count: 13

@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -82,7 +82,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod PostProcessingResource_t {
                 pub const m_bHasTonemapParams: usize = 0x0; // bool
-                pub const m_toneMapParams: usize = 0x4; // PostProcessingTonemapParameters_t
+                pub const m_toneMapParams: usize = 0x4; // 
                 pub const m_bHasBloomParams: usize = 0x40; // bool
                 pub const m_bloomParams: usize = 0x44; // PostProcessingBloomParameters_t
                 pub const m_bHasVignetteParams: usize = 0xCC; // bool
@@ -90,7 +90,7 @@ pub mod cs2_dumper {
                 pub const m_bHasLocalContrastParams: usize = 0xF4; // bool
                 pub const m_localConstrastParams: usize = 0xF8; // PostProcessingLocalContrastParameters_t
                 pub const m_nColorCorrectionVolumeDim: usize = 0x10C; // int32
-                pub const m_colorCorrectionVolumeData: usize = 0x110; // CUtlBinaryBlock
+                pub const m_colorCorrectionVolumeData: usize = 0x110; // 
                 pub const m_bHasColorCorrection: usize = 0x120; // bool
                 pub const m_bHasFogScatteringParams: usize = 0x121; // bool
                 pub const m_fogScatteringParams: usize = 0x124; // PostProcessingFogScatteringParameters_t
@@ -168,7 +168,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod MaterialParamBuffer_t {
-                pub const m_value: usize = 0x8; // CUtlBinaryBlock
+                pub const m_value: usize = 0x8; // 
             }
             // Parent: None
             // Field count: 14

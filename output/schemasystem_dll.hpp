@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #pragma once
 
@@ -122,18 +122,18 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_RotationVector = 0x4C; // RotationVector
                 constexpr std::ptrdiff_t m_RadianEuler = 0x58; // RadianEuler
                 constexpr std::ptrdiff_t m_DegreeEuler = 0x64; // DegreeEuler
-                constexpr std::ptrdiff_t m_QuaternionStorage = 0x70; // QuaternionStorage
+                constexpr std::ptrdiff_t m_QuaternionStorage = 0x70; // 
                 constexpr std::ptrdiff_t m_matrix3x4_t = 0x80; // matrix3x4_t
                 constexpr std::ptrdiff_t m_matrix3x4a_t = 0xB0; // matrix3x4a_t
                 constexpr std::ptrdiff_t m_Color = 0xE0; // Color
                 constexpr std::ptrdiff_t m_Vector4D = 0xE4; // Vector4D
                 constexpr std::ptrdiff_t m_CTransform = 0x100; // CTransform
                 constexpr std::ptrdiff_t m_pKeyValues = 0x120; // KeyValues*
-                constexpr std::ptrdiff_t m_CUtlBinaryBlock = 0x128; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_CUtlBinaryBlock = 0x128; // 
                 constexpr std::ptrdiff_t m_CUtlString = 0x138; // CUtlString
                 constexpr std::ptrdiff_t m_CUtlSymbol = 0x140; // CUtlSymbol
                 constexpr std::ptrdiff_t m_stringToken = 0x144; // CUtlStringToken
-                constexpr std::ptrdiff_t m_stringTokenWithStorage = 0x148; // CUtlStringTokenWithStorage
+                constexpr std::ptrdiff_t m_stringTokenWithStorage = 0x148; // 
                 constexpr std::ptrdiff_t m_ResourceTypes = 0x160; // CResourceArray<CResourcePointer<CResourceString>>
                 constexpr std::ptrdiff_t m_KV3 = 0x168; // KeyValues3
             }

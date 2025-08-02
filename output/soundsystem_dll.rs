@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -373,7 +373,7 @@ pub mod cs2_dumper {
                 pub const m_nStreamingSize: usize = 0x30; // uint32
                 pub const m_nSeekTable: usize = 0x38; // CUtlVector<int32>
                 pub const m_nLoopEnd: usize = 0x50; // int32
-                pub const m_encodedHeader: usize = 0x58; // CUtlBinaryBlock
+                pub const m_encodedHeader: usize = 0x58; // 
             }
             // Parent: None
             // Field count: 1
@@ -629,7 +629,7 @@ pub mod cs2_dumper {
                 pub const m_flLowCutoffFreq: usize = 0x18; // float32
                 pub const m_flHighCutoffFreq: usize = 0x1C; // float32
                 pub const m_bPeakMode: usize = 0x20; // bool
-                pub const m_bandDesc: usize = 0x24; // VMixDynamicsBand_t[3]
+                pub const m_bandDesc: usize = 0x24; // 
             }
             // Parent: None
             // Field count: 6

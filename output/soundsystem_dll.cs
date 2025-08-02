@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 namespace CS2Dumper.Schemas {
     // Module: soundsystem.dll
@@ -356,7 +356,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_nStreamingSize = 0x30; // uint32
             public const nint m_nSeekTable = 0x38; // CUtlVector<int32>
             public const nint m_nLoopEnd = 0x50; // int32
-            public const nint m_encodedHeader = 0x58; // CUtlBinaryBlock
+            public const nint m_encodedHeader = 0x58; // 
         }
         // Parent: None
         // Field count: 1
@@ -612,7 +612,7 @@ namespace CS2Dumper.Schemas {
             public const nint m_flLowCutoffFreq = 0x18; // float32
             public const nint m_flHighCutoffFreq = 0x1C; // float32
             public const nint m_bPeakMode = 0x20; // bool
-            public const nint m_bandDesc = 0x24; // VMixDynamicsBand_t[3]
+            public const nint m_bandDesc = 0x24; // 
         }
         // Parent: None
         // Field count: 6

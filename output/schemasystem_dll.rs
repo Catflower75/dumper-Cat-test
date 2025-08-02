@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -122,18 +122,18 @@ pub mod cs2_dumper {
                 pub const m_RotationVector: usize = 0x4C; // RotationVector
                 pub const m_RadianEuler: usize = 0x58; // RadianEuler
                 pub const m_DegreeEuler: usize = 0x64; // DegreeEuler
-                pub const m_QuaternionStorage: usize = 0x70; // QuaternionStorage
+                pub const m_QuaternionStorage: usize = 0x70; // 
                 pub const m_matrix3x4_t: usize = 0x80; // matrix3x4_t
                 pub const m_matrix3x4a_t: usize = 0xB0; // matrix3x4a_t
                 pub const m_Color: usize = 0xE0; // Color
                 pub const m_Vector4D: usize = 0xE4; // Vector4D
                 pub const m_CTransform: usize = 0x100; // CTransform
                 pub const m_pKeyValues: usize = 0x120; // KeyValues*
-                pub const m_CUtlBinaryBlock: usize = 0x128; // CUtlBinaryBlock
+                pub const m_CUtlBinaryBlock: usize = 0x128; // 
                 pub const m_CUtlString: usize = 0x138; // CUtlString
                 pub const m_CUtlSymbol: usize = 0x140; // CUtlSymbol
                 pub const m_stringToken: usize = 0x144; // CUtlStringToken
-                pub const m_stringTokenWithStorage: usize = 0x148; // CUtlStringTokenWithStorage
+                pub const m_stringTokenWithStorage: usize = 0x148; // 
                 pub const m_ResourceTypes: usize = 0x160; // CResourceArray<CResourcePointer<CResourceString>>
                 pub const m_KV3: usize = 0x168; // KeyValues3
             }

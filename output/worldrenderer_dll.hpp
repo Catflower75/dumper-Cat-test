@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #pragma once
 
@@ -44,7 +44,7 @@ namespace cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             namespace AggregateVertexAlbedoStreamOnDiskData_t {
-                constexpr std::ptrdiff_t m_BufferData = 0x0; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_BufferData = 0x0; // 
             }
             // Parent: None
             // Field count: 14
@@ -140,7 +140,7 @@ namespace cs2_dumper {
             // MGetKV3ClassDefaults
             namespace AggregateInstanceStreamOnDiskData_t {
                 constexpr std::ptrdiff_t m_DecodedSize = 0x0; // uint32
-                constexpr std::ptrdiff_t m_BufferData = 0x8; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_BufferData = 0x8; // 
             }
             // Parent: None
             // Field count: 11
@@ -349,7 +349,7 @@ namespace cs2_dumper {
             // MGetKV3ClassDefaults
             namespace EntityKeyValueData_t {
                 constexpr std::ptrdiff_t m_connections = 0x8; // CUtlVector<EntityIOConnectionData_t>
-                constexpr std::ptrdiff_t m_keyValuesData = 0x20; // CUtlBinaryBlock
+                constexpr std::ptrdiff_t m_keyValuesData = 0x20; // 
             }
             // Parent: None
             // Field count: 13

@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-07-29 08:05:49.300075200 UTC
+// 2025-08-02 05:11:37.046105 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -44,7 +44,7 @@ pub mod cs2_dumper {
             // Metadata:
             // MGetKV3ClassDefaults
             pub mod AggregateVertexAlbedoStreamOnDiskData_t {
-                pub const m_BufferData: usize = 0x0; // CUtlBinaryBlock
+                pub const m_BufferData: usize = 0x0; // 
             }
             // Parent: None
             // Field count: 14
@@ -140,7 +140,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod AggregateInstanceStreamOnDiskData_t {
                 pub const m_DecodedSize: usize = 0x0; // uint32
-                pub const m_BufferData: usize = 0x8; // CUtlBinaryBlock
+                pub const m_BufferData: usize = 0x8; // 
             }
             // Parent: None
             // Field count: 11
@@ -349,7 +349,7 @@ pub mod cs2_dumper {
             // MGetKV3ClassDefaults
             pub mod EntityKeyValueData_t {
                 pub const m_connections: usize = 0x8; // CUtlVector<EntityIOConnectionData_t>
-                pub const m_keyValuesData: usize = 0x20; // CUtlBinaryBlock
+                pub const m_keyValuesData: usize = 0x20; // 
             }
             // Parent: None
             // Field count: 13
