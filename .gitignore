@@ -3,3 +3,14 @@
 /.vs
 /target
 Cargo.lock
+
+# Visual Studio build artifacts
+/x64/
+/Debug/
+/Release/
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.iobj
+*.ipdb
